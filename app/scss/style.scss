@@ -3,45 +3,45 @@
 @import "fonts";
 @import "global";
 
-.header{
-  &__wrapper{
-    background-image: url(../img/content/header-bg.jpg);
-    height: 500px;
+/* Start section header */
+.header {
+  &__wrapper {
+    position: relative;
+    height: 100vh;
   }
-  &__top{
+  &__top {
     display: flex;
     justify-content: space-around;
     position: relative;
     padding-top: 30px;
     padding-left: 125px;
     align-items: center;
-    &-logo{
+    &-logo {
       position: absolute;
       left: 0;
       top: 25px;
       width: 111px;
       height: 93px;
       display: block;
-      img{
+      img {
         width: 111px;
       }
-
     }
-    &-text{
+    &-text {
       color: #fff;
       line-height: 15px;
-      a{
+      a {
         color: $red;
       }
     }
-    &-search{
+    &-search {
       max-width: 200px;
       width: 100%;
       position: relative;
-      input{
+      input {
         background-color: #bfbdbb;
         outline: none;
-        border-radius:6px;
+        border-radius: 6px;
         border: none;
         @include source;
         font-weight: 600;
@@ -50,7 +50,7 @@
         position: relative;
         padding-right: 40px;
       }
-      button{
+      button {
         height: 28px;
         border: none;
         outline: none;
@@ -66,39 +66,39 @@
       }
     }
 
-    &-admin{
-      .icon-sign-in{
+    &-admin {
+      .icon-sign-in {
         font-size: 14px;
         line-height: 15px;
       }
-      &-login{
+      &-login {
         line-height: 15px;
         color: #fff;
         margin-right: 12px;
-        
       }
     }
-    &-delivary{
+    &-delivary {
       line-height: 15px;
       color: #fff;
     }
   }
-  &__nav{
-    &-wrapper{
+  &__nav {
+    &-wrapper {
       background-color: #fff;
       padding: 15px 0;
       margin-top: 25px;
     }
   }
-  &__menu{
+  &__menu {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    &-list{
-      li{
+    position: relative;
+    &-list {
+      li {
         display: inline-block;
         margin-right: 30px;
-        a{
+        a {
           @include source;
           font-weight: 700;
           color: #000;
@@ -107,29 +107,28 @@
           line-height: 15px;
         }
       }
-
     }
-    &-cart{
+    &-cart {
       margin-right: 32px;
-      .icon-shopping-cart{
+      .icon-shopping-cart {
         font-size: 24px;
         color: #000;
         position: relative;
-        span{
+        span {
           position: absolute;
           background-color: $red;
           font-size: 9px;
           color: #fff;
           padding: 2px 3px;
           text-align: center;
-          border-radius:50%;
+          border-radius: 50%;
           right: -6px;
           top: -4px;
         }
       }
     }
-    &-btn{
-      a{
+    &-btn {
+      a {
         @include source;
         font-weight: 700;
         font-size: 14px;
@@ -143,10 +142,318 @@
       }
     }
   }
-  &__burger{
+  &__burger {
     display: none;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    &::before {
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 2px;
+      background-color: $grey;
+      left: 0;
+      top: 0;
+    }
+    span {
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 2px;
+      background-color: $grey;
+      left: 0;
+      top: 8px;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 2px;
+      background-color: $grey;
+      left: 0;
+      top: 15px;
+    }
+  }
+}
+.header__content {
+  &-wrapper {
+    height: 610px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-box {
+    max-width: 802px;
+  }
+  &-title {
+    @include sacramento;
+    font-size: 36px;
+    line-height: 15px;
+    color: $blue;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  &-maintitle {
+    @include lobster;
+    font-size: 48px;
+    color: #fff;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  &-text {
+    text-align: center;
+    font-size: 16px;
+    line-height: 28px;
+    color: #fff;
+    margin-bottom: 53px;
+  }
+  &-btns {
+    text-align: center;
+    .header__content-btn-left {
+      font-weight: 610;
+      line-height: 15px;
+      color: #fff;
+      text-transform: uppercase;
+      padding: 18px 35px;
+      border: 1px solid $red;
+      background-color: transparent;
+      border-radius: 6px;
+      margin-right: 45px;
+    }
+    .header__content-btn-right {
+      font-weight: 600;
+      line-height: 15px;
+      color: #fff;
+      text-transform: uppercase;
+      padding: 18px 35px;
+      background-color: $red;
+      border-radius: 6px;
+    }
+  }
+}
+.header__slider {
+  &-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.79);
+    }
+  }
+  &-items {
+  }
+  &-item {
+    height: 100vh;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 
+/* End section header */
+
+/* Start section welcome */
+.welcome {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__box-text {
+    max-width: 686px;
+  }
+  &__text {
+    padding-top: 75px;
+    font-size: 14px;
+    line-height: 28px;
+    margin-bottom: 70px;
+    p {
+      padding-top: 42px;
+    }
+    &-sign {
+      display: inline-block;
+      @include sacramento;
+      font-size: 28px;
+      line-height: 25px;
+      color: #000;
+      span {
+        display: block;
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+  }
+  &__box-book {
+    padding-top: 138px;
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      background-color: $red;
+      padding: 80px 20px;
+    }
+
+    &-title {
+      display: flex;
+      justify-content: center;
+      span {
+        @include lobster;
+        color: #fff;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 15px;
+        margin-bottom: 55px;
+        text-align: center;
+        position: relative;
+        padding: 0 30px;
+        display: inline-block;
+        &::before {
+          position: absolute;
+          content: url(../img/content/book-title.png);
+          top: 0;
+          left: 0;
+        }
+        &::after {
+          position: absolute;
+          content: url(../img/content/book-title.png);
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+    &-form {
+      display: flex;
+      flex-direction: column;
+      input {
+        width: 330px;
+        height: 40px;
+        padding-left: 25px;
+        line-height: 15px;
+        border: none;
+        margin-bottom: 20px;
+        outline: none;
+      }
+      select {
+        width: 330px;
+        height: 40px;
+        padding-left: 25px;
+        line-height: 15px;
+        border: none;
+        margin-bottom: 20px;
+        color: $grey;
+        outline: none;
+      }
+      button {
+        width: 330px;
+        height: 40px;
+        background-color: $blue;
+        color: #fff;
+        font-weight: 600;
+        line-height: 15px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/* End section welcome */
+
+/* start section provide */
+.provide {
+  &__wrapper {
+    padding: 85px 40px 0 40px;
+
+  }
+  &__slider-inner {
+
+  }
+  &__slider-items {
+
+  }
+  &__slider-item {
+    max-width: 270px;
+    &-img {
+      width: 270px;
+      height: 230px;
+      border-top-right-radius: 72px;
+      border-bottom-left-radius: 72px;
+      img {
+        width: 270px;
+        height: 230px;
+      }
+    }
+    &-title {
+      @include lobster;
+      font-size: 24px;
+      line-height: 44px;
+      color: #000;
+    }
+    &-price {
+      @include lobster;
+      font-size: 24px;
+      line-height: 44px;
+      color: #000;
+      span {
+        @include lobster;
+        font-size: 16px;
+        text-decoration: line-through;
+        line-height: 44px;
+        color: #000;
+      }
+    }
+  }
+}
+
+.slick-btn.slick-prev.icon-arrow-left{
+  position: absolute;
+  z-index: 2;
+  left: -12px;
+  top: 90px;
+  font-size: 24px;
+  width: 56px;
+  height: 56px;
+  @include blue-gr;
+  outline: none;
+   border:none;
+  color:#fff ;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+.slick-btn.slick-next.icon-arrow-right{
+  position: absolute;
+  z-index: 5;
+  right: -12px;
+  top: 90px;
+  font-size: 24px;
+  width: 56px;
+  height: 56px;
+  @include blue-gr;
+  outline: none;
+   border:none;
+  color:#fff ;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+
+
+/* end section provide */
 
 @import "media";
