@@ -68,11 +68,13 @@ body {
 .section__title-center {
   padding-top: 155px;
   text-align: center;
+
   .section__title {
     @include sacramento;
     font-size: 36px;
     line-height: 64px;
     color: $red;
+
   }
   .section__subtitle {
     @include lobster;

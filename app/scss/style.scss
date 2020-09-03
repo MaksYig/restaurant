@@ -321,6 +321,7 @@
   }
   &__box-book {
     padding-top: 138px;
+    max-width: 370px;
     &-inner {
       display: flex;
       flex-direction: column;
@@ -441,7 +442,7 @@
 .slick-btn.slick-prev.icon-arrow-left {
   position: absolute;
   z-index: 2;
-  left: -12px;
+  left: -15px;
   top: 90px;
   font-size: 24px;
   width: 56px;
@@ -456,7 +457,7 @@
 .slick-btn.slick-next.icon-arrow-right {
   position: absolute;
   z-index: 5;
-  right: -12px;
+  right: -15px;
   top: 90px;
   font-size: 24px;
   width: 56px;
@@ -468,28 +469,30 @@
   border-radius: 50%;
   cursor: pointer;
 }
-
+.provide__slider__items.slick-initialized.slick-slider {
+  text-align: center;
+  position: relative;
+}
 /* end section provide */
 
 /* Start section About */
 .accordion.accordion--active {
-  .about__accordion{
-   color: $blue;
-   &::after {
-     content: "\f061";
-     position: absolute;
-     font-family: "icomoon" !important;
-     transform: rotate(270deg);
-     transition: 0.4s;
-     color: $red;
-   }
+  .about__accordion {
+    color: $blue;
+    &::after {
+      content: "\f061";
+      position: absolute;
+      font-family: "icomoon" !important;
+      transform: rotate(270deg);
+      transition: all 1.8s;
+      color: $red;
+    }
   }
-   .about__panel{
-     display: block;
-   }
-   
- }
-
+  .about__panel {
+    height: 65px;
+    transition: all 1.8s;
+  }
+}
 
 .about {
   padding-bottom: 125px;
@@ -497,7 +500,6 @@
   &__wrapper {
     display: flex;
     position: relative;
-
   }
   &__box {
     max-width: 800px;
@@ -505,19 +507,18 @@
     z-index: 1;
     &-text {
       padding-top: 55px;
-      .accordion__items{
+      .accordion__items {
         padding-top: 55px;
-        
       }
       .about__accordion {
         background-color: transparent;
         cursor: pointer;
-        padding: 18px;
+        padding: 16px ;
         width: 100%;
         text-align: left;
         border: none;
         outline: none;
-        transition: 0.4s;
+        transition: all 1.8s;
         position: relative;
         z-index: 1;
         &::after {
@@ -526,41 +527,112 @@
           top: 10px;
           right: 20px;
           font-family: "icomoon" !important;
-          font-size: 12px;
+          font-size: 14px;
           transform: rotate(90deg);
-          transition: 0.4s;
+          transition: all 1.8s;
         }
       }
 
       .about__accordion:hover {
         color: $blue;
       }
-      
 
       .about__panel {
         padding: 0 18px;
         background-color: transparent;
-        display: none;
+        height: 0;
         overflow: hidden;
         padding-left: 25px;
+        transition: all 1s;
       }
     }
-    &-pic{
-      top: 110px;
+    &-pic {
+      // top: 110px;
+      bottom: -130px;
       right: -10%;
       position: absolute;
       z-index: -1;
       max-width: 638px;
       opacity: 0.5;
 
-      img{
-
+      img {
       }
     }
-    
   }
 }
 
 /* End section About */
+/* Start delivary section */
+
+.delivary {
+  &__wrapper {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.72);
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+    .section__title-center {
+      position: relative;
+    }
+    .section__subtitle{
+      color: #fff;
+    }
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 130px;
+    padding-bottom: 200px;
+  }
+  &__item {
+    max-width: 360px;
+    text-align: center;
+    padding: 80px 40px 50px 40px;
+    background-color: #fff;
+    z-index: 2;
+    position: relative;
+    margin-right: 20px;
+    &:last-child{
+      margin-right: 0;
+    }
+
+    &-img {
+      background-color: #fff;
+      width: 100px;
+      height: 80px;
+      border-top-right-radius: 24px;
+      border-bottom-left-radius: 24px;
+      box-shadow: 0px 2px 8px 0px rgba(33, 30, 31, 0.5);
+      position: absolute;
+      top: -40px;
+      left: 35%;
+      img {
+        margin: 7px auto;
+      }
+    }
+    &-title {
+      margin-bottom: 20px;
+      @include lobster;
+      font-size: 28px;
+      line-height: 49px;
+      color: $red;
+    }
+    &-text {
+      line-height: 28px;
+    }
+  }
+}
+
+/* End delivary section */
 
 @import "media";
