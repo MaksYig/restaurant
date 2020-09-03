@@ -269,6 +269,28 @@
 
 /* Start section welcome */
 .welcome {
+  .section__title-left {
+    .section__title {
+      @include lobster;
+      font-size: 48px;
+      line-height: 38px;
+      color: $red;
+    }
+    .section__subtitle {
+      @include lobster;
+      font-size: 28px;
+      line-height: 38px;
+      color: #222;
+      position: relative;
+      &::after {
+        content: url(../img/content/section__tile-left.png);
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+      }
+    }
+  }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -377,13 +399,10 @@
 .provide {
   &__wrapper {
     padding: 85px 40px 0 40px;
-
   }
   &__slider-inner {
-
   }
   &__slider-items {
-
   }
   &__slider-item {
     max-width: 270px;
@@ -419,7 +438,7 @@
   }
 }
 
-.slick-btn.slick-prev.icon-arrow-left{
+.slick-btn.slick-prev.icon-arrow-left {
   position: absolute;
   z-index: 2;
   left: -12px;
@@ -429,13 +448,12 @@
   height: 56px;
   @include blue-gr;
   outline: none;
-   border:none;
-  color:#fff ;
+  border: none;
+  color: #fff;
   border-radius: 50%;
   cursor: pointer;
-
 }
-.slick-btn.slick-next.icon-arrow-right{
+.slick-btn.slick-next.icon-arrow-right {
   position: absolute;
   z-index: 5;
   right: -12px;
@@ -445,15 +463,104 @@
   height: 56px;
   @include blue-gr;
   outline: none;
-   border:none;
-  color:#fff ;
+  border: none;
+  color: #fff;
   border-radius: 50%;
   cursor: pointer;
-
 }
 
-
-
 /* end section provide */
+
+/* Start section About */
+.accordion.accordion--active {
+  .about__accordion{
+   color: $blue;
+   &::after {
+     content: "\f061";
+     position: absolute;
+     font-family: "icomoon" !important;
+     transform: rotate(270deg);
+     transition: 0.4s;
+     color: $red;
+   }
+  }
+   .about__panel{
+     display: block;
+   }
+   
+ }
+
+
+.about {
+  padding-bottom: 125px;
+
+  &__wrapper {
+    display: flex;
+    position: relative;
+
+  }
+  &__box {
+    max-width: 800px;
+    width: 100%;
+    z-index: 1;
+    &-text {
+      padding-top: 55px;
+      .accordion__items{
+        padding-top: 55px;
+        
+      }
+      .about__accordion {
+        background-color: transparent;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+        position: relative;
+        z-index: 1;
+        &::after {
+          content: "\f061";
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          font-family: "icomoon" !important;
+          font-size: 12px;
+          transform: rotate(90deg);
+          transition: 0.4s;
+        }
+      }
+
+      .about__accordion:hover {
+        color: $blue;
+      }
+      
+
+      .about__panel {
+        padding: 0 18px;
+        background-color: transparent;
+        display: none;
+        overflow: hidden;
+        padding-left: 25px;
+      }
+    }
+    &-pic{
+      top: 110px;
+      right: -10%;
+      position: absolute;
+      z-index: -1;
+      max-width: 638px;
+      opacity: 0.5;
+
+      img{
+
+      }
+    }
+    
+  }
+}
+
+/* End section About */
 
 @import "media";

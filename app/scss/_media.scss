@@ -1,8 +1,26 @@
+@media (max-width: 1410px) {
+  .about__box-pic{
+    right: -3%;
+  }
+
+}
+
+@media (max-width: 1250px) {
+  .about__box-pic{
+    right: 0%;
+  }
+
+}
+
 @media (max-width: 1090px) {
   .welcome__wrapper {
     flex-wrap: wrap;
     justify-content: center;
   }
+  .about__box-pic{
+    opacity: 0.2;
+  }
+
 }
 
 @media (max-width: 991px) {
@@ -83,4 +101,17 @@
   .slick-btn.slick-prev.icon-arrow-left{
     left: -30px;
   }
+  .section__title-left{
+    text-align: center;
+  }
+  .section__subtitle {
+    position: relative;
+    &::after {
+      position: absolute;
+      right: 20px;
+    }
+  }
+  .about__box-text .accordion__items {
+    padding-top: 20px;
+}
 }

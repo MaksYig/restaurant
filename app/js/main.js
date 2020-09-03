@@ -40,4 +40,9 @@ $(function () {
       },
     ],
   });
+
+  $(".about__accordion").on("click", function () {
+    $(".accordion").removeClass("accordion--active");
+    $(this).parent().addClass("accordion--active");
+  });
 });
