@@ -35,7 +35,9 @@ body {
   color: $grey;
   font-weight: 400;
 }
-
+body.block{
+  overflow: hidden;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;

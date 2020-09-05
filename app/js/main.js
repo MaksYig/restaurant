@@ -41,10 +41,46 @@ $(function () {
     ],
   });
 
-  $(".about__accordion").on("click", function () {
-    $(".accordion").removeClass("accordion--active");
-    $(this).parent().addClass("accordion--active");
+  /* Start Burger code */
+ const burger = document.querySelector('.header__burger'),
+       menu = document.querySelector('.header__menu-list');
+  
+      burger.addEventListener('click',() => {
+      burger.classList.toggle('active');
+      menu.classList.toggle('active');
+      this.body.classList.toggle('block');
+    });
+
+
+  /* End Burger code */
+/* Accordion code */
+  const tabs = document.querySelectorAll(".about__accordion"),
+  tabsContent = document.querySelectorAll(".accordion");
+
+function hideTabContent() {
+  tabsContent.forEach((item) => {
+    item.classList.remove("accordion--active");
   });
+}
+function showTabContent(i = 0) {
+  tabsContent[i].classList.add("accordion--active");
+}
+hideTabContent();
+showTabContent();
+tabs.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target && target.classList.contains("about__accordion")) {
+      tabs.forEach((item, i) => {
+        if (target == item) {
+          hideTabContent();
+          showTabContent(i);
+        }
+      });
+    }
+  });
+});
+/* end accordion code */
 
   let containerEl = document.querySelector("#items");
   let mixer = mixitup(containerEl);
@@ -77,7 +113,7 @@ $(function () {
         settings: {
           slidesToShow: 1,
           arrows:false,
-          
+
         },
       },
     ],
