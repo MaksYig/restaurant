@@ -1,6 +1,6 @@
 @media (max-width: 1410px) {
   .about__box-pic {
-    right: -3%;
+    right: 0%;
   }
 }
 
@@ -16,6 +16,24 @@
   }
   .delivary__item {
     margin-top: 60px;
+  }
+  .feedback__slider-separ {
+    display: none;
+  }
+}
+@media (max-width: 1150px) {
+  .events__box-inner {
+    margin: 0 7px;
+    // bottom: -18%;
+    padding: 0 35px 60px 35px;
+  }
+
+  .events__box-inner .section__title-center {
+    padding-top: 40px;
+    padding-bottom: 35px;
+  }
+  .events__box-footer {
+    padding-top: 35px;
   }
 }
 
@@ -53,10 +71,36 @@
   .menu__item {
     width: 100%;
   }
+  .events__box-content .events__box-title {
+    font-size: 22px;
+  }
+  .events__box-content .events__box-text {
+    font-size: 12px;
+  }
+  .events__box-footer-sponsor-title,
+  .events__box-footer-date-title {
+    font-size: 16px;
+  }
+
+  .events__box-footer-btn button {
+    padding: 15px 35px;
+  }
+  .events__box-footer-date-title span {
+    font-size: 12px;
+  }
+  .feedback__slider-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .feedback__slider-box {
+    padding: 0 20px;
+  }
 }
 @media (max-width: 750px) {
   .header__menu-list {
-    top:800%;
+    top: -1000px;
+    transition: top 0.6s;
   }
   .header__burger {
     display: block;
@@ -100,6 +144,24 @@
   }
   .menu__wrapper {
     padding-top: 40px;
+  }
+  .events__box-footer {
+    padding-top: 35px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .events__box-footer-btn {
+    margin-top: 10px;
+  }
+  .contacts__wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+  }
+  .contacts__wrapper .message__box {
+    margin-top: 20px;
   }
 }
 @media (max-width: 400px) {
@@ -175,5 +237,35 @@
   }
   .stuff-slider-container {
     padding-top: 30px;
+  }
+  .events__box-line {
+    font-size: 14px;
+    left: -44px;
+    top: 26px;
+  }
+  .events__box-content .events__box-title {
+    line-height: 30px;
+  }
+  .events__box-footer {
+    padding-top: 0;
+  }
+  .feedback__slider-box .feedback__slider-box-icon.icon-quote-left {
+    padding-top: 40px;
+  }
+  .feedback__slider-box-text {
+    margin-bottom: 25px;
+  }
+  .feedback__slider-inner {
+    padding-top: 30px;
+  }
+  .open__hours li {
+    font-size: 16px;
+    line-height: 40px;
+  }
+  .send__form input {
+    margin-bottom: 20px;
+  }
+  .send__form textarea {
+    margin-bottom: 20px;
   }
 }
