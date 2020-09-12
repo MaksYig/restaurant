@@ -5,10 +5,33 @@ const burger = document.querySelector(".header__burger"),
 burger.addEventListener("click", () => {
   burger.classList.toggle("active");
   menu.classList.toggle("active");
-  document.querySelector('body').classList.toggle("block");
+  document.querySelector("body").classList.toggle("block");
 });
 
 /* End Burger code */
+
+/*  popup open // close function */
+const popupCloseIcon = document.querySelector("[data-close]"),
+  popupWindow = document.querySelector(".popup"),
+  body = document.querySelector("body"),
+  reservation = document.querySelector(".header__menu-btn");
+
+reservation.addEventListener("click", () => {
+  popupOpen();
+});
+
+function popupClose() {
+  popupCloseIcon.addEventListener("click", () => {
+    popupWindow.classList.add("closed");
+    body.classList.remove("block");
+  });
+}
+popupClose();
+
+function popupOpen() {
+  popupWindow.classList.remove("closed");
+  body.classList.add("block");
+}
 
 /* Accordion code */
 const tabs = document.querySelectorAll(".about__accordion"),
@@ -124,7 +147,7 @@ $(function () {
 
   $(".feedback__slider-inner").slick({
     arrows: true,
-    
+
     slidesToShow: 1,
     /* Left btn */
     prevArrow:
@@ -132,19 +155,15 @@ $(function () {
     // /* Right btn */
     nextArrow:
       '<button type="button" class="slick-btn slick-next icon-arrow-right">',
-      responsive: [
-               
-        {
-          breakpoint: 420,
-          settings: {
-            arrows: false,
-            // fade:true,
-            autoplay: true,
-          },
+    responsive: [
+      {
+        breakpoint: 420,
+        settings: {
+          arrows: false,
+          // fade:true,
+          autoplay: true,
         },
-      ],
-    
+      },
+    ],
   });
-
-
 });
